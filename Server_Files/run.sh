@@ -14,6 +14,9 @@ declare -r REPO_PATH_LOCATION='/opt/copyright_service/gitHub'
 declare -r SERVICE_PATH_LOCATION='/opt/copyright_service'
 # end variables
 
+# $1 user
+# $2 repo_name
+# $3 path
 function checkout_run_push {
 
 	# variables for checkout_run_push
@@ -24,7 +27,7 @@ function checkout_run_push {
 
 	branch=${branch#$exclusion}			
 	
-	cd $path/$repoName
+	cd $3/$1
 	$RUN_GIT checkout $branch | grep remotes/origin
 	
 	echo $branch
@@ -34,10 +37,33 @@ function checkout_run_push {
 	$RUN_MONO $SERVICE_PATH_LOCATION/$copyrightServiceName
 	echo 'service finished'
 
-	cd $path/$repoName
+	cd $3/$1
 	$RUN_GIT commit -a -m "$message"
-	$RUN_GIT push ssh://git@github.com/$user/$repoName
+	$RUN_GIT push ssh://git@github.com/$2/$1
 	echo 'git pushed'
+}
+
+# $1 repo_name
+# $2 User
+function delete_and_clone {
+
+	local -r repo_name=$1	
+	local -r path=$REPO_PATH_LOCATION/$2
+
+	cd $path
+	ls -al
+	rm -rf $repo_name
+	echo "deleted $repo_name"
+				
+	$RUN_GIT clone https://github.com/$2/$repo_name
+	echo "initial git pulled of $repo_name"
+
+	cd $path/$repo_name
+	
+	#here we switch between branches to update all code...We hope.
+	for branch in `git branch -a | grep remotes/origin`; do	
+		checkout_run_push $user $repo_name $path
+	done
 }
 
 # $1 list of users
@@ -49,25 +75,7 @@ function main {
 		local -r echo $user
 		while read line
 		do
-			local -r repoName=$line
-			
-			local -r path=$REPO_PATH_LOCATION/$user
-
-			cd $path
-			ls -al
-			rm -rf $repoName
-		
-			echo "deleted $repoName"
-				
-			$RUN_GIT clone https://github.com/$user/$repoName
-			echo "initial git pulled of $repoName"
-
-			cd $path/$repoName
-	
-			#here we switch between branches to update all code...We hope.
-			for branch in `git branch -a | grep remotes/origin`; do	
-				checkout_run_push		
-			done	
+			delete_and_clone $line $user
 		done < $2
 	done < $1
 }
