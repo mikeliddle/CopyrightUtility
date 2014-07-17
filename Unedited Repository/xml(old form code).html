@@ -1,0 +1,853 @@
+<html lang="en">
+
+	<head>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+		<script>
+		$(document).ready(function () {
+				
+				//var pathname = window.location.href;
+				//var a = pathname.substring(pathname.IndexOf('=' + 1));
+				$.ajax({
+    				type: "GET",
+    				//url: "https://connorgp1.sharepoint.com/welcome/SiteAssets/"+a+".xml",
+    				url: "https://connorgp1.sharepoint.com/welcome/SiteAssets/onboardingformtemplate.xml",
+	    			dataType: "xml",
+    				success: xmlParser
+   				});
+			});
+	
+			function xmlParser(xml) {
+				var x = 1;
+				
+				$(xml).find("row").each(function () {
+    				$("#"+x+"Initial").val($(this).find("Initial").text());
+    				$("#"+x+"IC").val($(this).find("IC").text());
+    				$("#"+x+"Intern").val($(this).find("Intern").text());
+    				$("#"+x+"Notes").val($(this).find("Notes").text());
+    				x++;
+ 				});
+ 				
+			}</script>
+		<script src="writexml.js"></script>
+	</head>
+	<body>
+		<h1>Employee Details:</h1>
+		<form method="post" id="EmployeeDetails">
+			<table border="1" cellpadding="5" rules="groups">
+				<tr>
+					<td>Employee Name:</td>
+					<td><input type="text" id="Name" value="" /></td>
+				</tr>
+				<tr><td colspan="2"><hr></td></tr>
+				<tr>
+					<td>Employee Cell Number:</td>
+					<td><input type="text" id="CellNumber" value="" /></td>
+				</tr>
+				<tr><td colspan="2"><hr></td></tr>
+				<tr>
+					<td>Employee Contact Email:</td>
+					<td><input type="text" id="Email" value="" /></td>
+				</tr>
+				<tr><td colspan="2"><hr></td></tr>
+				<tr>
+					<td>Employee Start Date:</td>
+					<td><input type="text" id="StartDate" value="" /></td>
+				</tr>
+				<tr><td colspan="2"><hr></td></tr>
+				<tr>
+					<td>Address/Title/Home Office:</td>
+					<td><input type="text" id="AddressTitleOffice" value="" /></td>
+				</tr>
+			</table>
+		</form>
+		
+		<h1><b>Checklist:</b></h1>
+		<form method="post" id="Checklist">
+			<table border="1" rules="all" cellpadding="5">
+				<tr valign="top">
+					<th>#</th>
+					<th>Task</th>
+					<th>Owner</th>
+					<th>Timing (days pre/post hire date)</th>
+					<th>Initial once Completed</th>
+					<th>Needed for IC's</th>
+					<th>Needed for Interns</th>
+					<th>Notes &amp; Comments</th>
+				</tr>  
+				<tr valign="top">
+					<td>1</td>
+					<td>Send background check approval forms to employee</td>
+					<td>HR</td>
+					<td>pre-hire</td>
+					<td>
+					<input type="text" id="1Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="1IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="1Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="1Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>2</td>
+					<td>Receive and review forms and complete background check</td>
+					<td>HR</td>
+					<td>pre-hire</td>
+					<td>
+					<input type="text" id="2Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="2IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="2Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="2Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>3</td>
+					<td>Background check concerns discuss and resolved</td>
+					<td>HR</td>
+					<td>pre-hire</td>
+					<td>
+					<input type="text" id="3Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="3IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="3Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="3Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>4</td>
+					<td>Set-up CG email account</td>
+					<td>IT</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="4Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="4IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="4Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="4Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>5</td>
+					<td>Set-up Skype account</td>
+					<td>IT</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="5Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="5IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="5Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="5Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>6</td>
+					<td>Add employee to relevant distribution lists</td>
+					<td>IT</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="6Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="6IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="6Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="6Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>7</td>
+					<td>Set-up Ring Central account</td>
+					<td>IT</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="7Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="7IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="7Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="7Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>8</td>
+					<td>Set-up Dropbox account with 50 GB of storage space</td>
+					<td>IT</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="8Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="8IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="8Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="8Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>10</td>
+					<td>Set-up Printer Profile</td>
+					<td>IT</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="10Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="10IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="10Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="10Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>11</td>
+					<td>New hire business cards - <i style="color:red;">confirm the employee details prior to ordering</i></td>
+					<td>HR</td>
+					<td>1 week before start date</td>
+					<td>
+					<input type="text" id="11Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="11IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="11Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="11Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>12</td>
+					<td>Send payroll and employment package to employee
+					<br />
+					&gt; W-4
+					<br />
+					&gt; I-9
+					<br />
+					&gt; Notice to employee (labor code 2810.5)
+					<br />
+					&gt; 1099 (if required)
+					<br />
+					&gt; Authorization for debit/credit</td>
+					<td>HR</td>
+					<td>pre-hire; returned on start date</td>
+					<td>
+					<input type="text" id="12Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="12IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="12Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="12Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>13</td>
+					<td>Send employee procedural documents (CoC, Onboarding Policy, T &amp; E Reimbursement Policy, Workpaper Management Policy)</td>
+					<td>HR</td>
+					<td>pre-hire</td>
+					<td>
+					<input type="text" id="13Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="13IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="13Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="13Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>14</td>
+					<td>Send benefits package to employee:
+					<br />
+					&gt; Benefits cover letter
+					<br />
+					&gt; I-9
+					<br />
+					&gt; Medical
+					<br />
+					&gt; Dental
+					<br />
+					&gt; Vision
+					<br />
+					&gt; Life insurance
+					<br />
+					&gt; Flex spending</td>
+					<td>HR</td>
+					<td>soft copy pre-hire &amp; hard copy on Day 1</td>
+					<td>
+					<input type="text" id="14Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="14IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="14Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="14Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>15</td>
+					<td>Prepare laptop peripherals (mouse, laptop bag, etc.)</td>
+					<td>Margaret</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="15Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="15IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="15Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="15Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>16</td>
+					<td>Laptop set-up aand ready for use on Day 1</td>
+					<td>IT</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="16Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="16IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="16Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="16Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>17</td>
+					<td>Connor Group keys and/or access badge (offices and building)</td>
+					<td>Jeff S.</td>
+					<td>Pre-start date</td>
+					<td>
+					<input type="text" id="17Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="17IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="17Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="17Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>18</td>
+					<td>Set-up CG email account</td>
+					<td>IT</td>
+					<td>Pre-start date</td>
+					<td>
+					<input type="text" id="18Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="18IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="18Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="18Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>19</td>
+					<td>Assign counselor</td>
+					<td>Maria</td>
+					<td>Pre-start date</td>
+					<td>
+					<input type="text" id="19Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="19IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="19Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="19Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>20</td>
+					<td>Send out new employee notification (weekly email) to relevant internal team</td>
+					<td>HR</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="20Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="20IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="20Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="20Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>21</td>
+					<td><b>Determine Week 1 Schedule</b> (arrange Day 1 start time, orientations, luncheons, etc.)</td>
+					<td>Jeff S.</td>
+					<td>pre-start date</td>
+					<td>
+					<input type="text" id="21Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="21IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="21Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="21Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>22</td>
+					<td>Office orientation (kitchen, desk location, key contacts, supplies, etc.)</td>
+					<td>Jeff S.</td>
+					<td>Day 1</td>
+					<td>
+					<input type="text" id="22Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="22IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="22Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="22Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>23</td>
+					<td><b>IT orientation meeting</b> (use of laptop, key programs, Printers, IT resources etc.)</td>
+					<td>IT</td>
+					<td></td>
+					<td>
+					<input type="text" id="23Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="23IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="23Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="23Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>24</td>
+					<td>Add to "accounting sources" folder in Dropbox</td>
+					<td>IT</td>
+					<td></td>
+					<td>
+					<input type="text" id="24Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="24IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="24Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="24Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>25</td>
+					<td><b>HR orientation meeting</b> (Review of HR documents, policies and benefits)</td>
+					<td>HR</td>
+					<td></td>
+					<td>
+					<input type="text" id="25Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="25IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="25Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="25Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>26</td>
+					<td>Record all employee benefit elections and other forms</td>
+					<td>HR</td>
+					<td></td>
+					<td>
+					<input type="text" id="26Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="26IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="26Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="26Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>27</td>
+					<td>Send Travel Profile, PTO form, Holiday Schedule, Training Calendar</td>
+					<td>HR</td>
+					<td></td>
+					<td>
+					<input type="text" id="27Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="27IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="27Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="27Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>28</td>
+					<td>Send CG internal Bio sample</td>
+					<td>HR</td>
+					<td>Day 1</td>
+					<td>
+					<input type="text" id="28Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="28IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="28Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="28Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>29</td>
+					<td>Send CG external Bio sample</td>
+					<td>HR</td>
+					<td>Day 1</td>
+					<td>
+					<input type="text" id="29Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="29IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="29Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="29Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>30</td>
+					<td>Invite to next all-hands call, training, luncheon, etc.</td>
+					<td>HR</td>
+					<td></td>
+					<td>
+					<input type="text" id="30Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="30IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="30Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="30Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>31</td>
+					<td><b>Scheduling orientation meeting</b> (Master Schedule and Resource Requests - Zendesk)</td>
+					<td>Margaret</td>
+					<td></td>
+					<td>
+					<input type="text" id="31Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="31IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="31Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="31Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>32</td>
+					<td><b>Timecards and Expenses orientation meeting</b> (review timesheet and expense formsw/Dilan) and SpringAhead introduction</td>
+					<td>Dilan</td>
+					<td></td>
+					<td>
+					<input type="text" id="32Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="32IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="32Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="32Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>33</td>
+					<td>Add New Hire to payroll system</td>
+					<td>Dilan</td>
+					<td></td>
+					<td>
+					<input type="text" id="33Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="33IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="33Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="33Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>34</td>
+					<td><b>Travel orientation meeting</b> (Review travel policy, reimbursement and Traveller Form)</td>
+					<td>Jeff S.</td>
+					<td></td>
+					<td>
+					<input type="text" id="34Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="34IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="34Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="34Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>35</td>
+					<td>Introduce counselor</td>
+					<td>Jeff S.</td>
+					<td>Day 1 or 2</td>
+					<td>
+					<input type="text" id="35Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="35IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="35Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="35Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>36</td>
+					<td>Introduce 1st project team leader(s)</td>
+					<td>Jeff S.</td>
+					<td>Day 1 or 2</td>
+					<td>
+					<input type="text" id="36Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="36IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="36Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="36Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>37</td>
+					<td>Introduce to office tools (meetings, calendars, Outlook, conference calls) (Ashley/Kristin or Maria)</td>
+					<td></td>
+					<td>Day 2</td>
+					<td>
+					<input type="text" id="37Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="37IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="37Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="37Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>38</td>
+					<td>Practice introduction training (Aleks/tbd)</td>
+					<td></td>
+					<td>Day 2</td>
+					<td>
+					<input type="text" id="38Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="38IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="38Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="38Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>39</td>
+					<td>Send out frimwide Welcome to CG newletter on new people</td>
+					<td>Jeff S.</td>
+					<td>Day 2</td>
+					<td>
+					<input type="text" id="39Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="39IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="39Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="39Notes" value="" />
+					</td>
+				</tr>  
+				<tr valign="top">
+					<td>40</td>
+					<td>Send Firm-wide introductory email</td>
+					<td>Jeff S.</td>
+					<td></td>
+					<td>
+					<input type="text" id="40Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="40IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="40Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="40Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>41</td>
+					<td>Schedule 90 day review meeting</td>
+					<td>Jeff S.</td>
+					<td></td>
+					<td>
+					<input type="text" id="41Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="41IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="41Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="41Notes" value="" />
+					</td>
+
+				</tr>  
+				<tr valign="top">
+					<td>42</td>
+					<td>Schedule 180 day review if promoting</td>
+					<td>Jeff S.</td>
+					<td></td>
+					<td>
+					<input type="text" id="42Initial" value="" />
+					</td>
+					<td>
+					<input type="text" id="42IC" value="" />
+					</td>
+					<td>
+					<input type="text" id="42Intern" value="" />
+					</td>
+					<td>
+					<input type="text" id="42Notes" value="" />
+					</td>
+
+				</tr>  
+			</table>
+			<input type="submit" id="Submit" value="Save" />
+		</form>
+	</body>
+</html>

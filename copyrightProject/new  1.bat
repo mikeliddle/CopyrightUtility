@@ -1,0 +1,1 @@
+C:\Users\mike.liddle\documents\copyrightproject\licenseAdder.exe -chxXmlFiles.checked=true
