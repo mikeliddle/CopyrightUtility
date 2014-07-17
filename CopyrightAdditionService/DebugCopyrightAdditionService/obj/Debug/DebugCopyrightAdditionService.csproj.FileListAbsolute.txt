@@ -1,0 +1,14 @@
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\DebugCopyrightAdditionService.exe.manifest
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\DebugCopyrightAdditionService.application
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\DebugCopyrightAdditionService.exe
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\DebugCopyrightAdditionService.pdb
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\obj\Debug\DebugCopyrightAdditionService.exe.manifest
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\obj\Debug\DebugCopyrightAdditionService.application
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\obj\Debug\DebugCopyrightAdditionService.exe
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\obj\Debug\DebugCopyrightAdditionService.pdb
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\DebugCopyrightAdditionService.exe.config
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\App.config
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\copyright.txt
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\log4net.dll
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\bin\Debug\log4net.xml
+C:\Users\mike.liddle\Documents\GitHub\CopyrightUtility\CopyrightAdditionService\DebugCopyrightAdditionService\obj\Debug\DebugCopyrightAdditionService.csprojResolveAssemblyReference.cache
