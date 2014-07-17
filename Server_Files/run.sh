@@ -1,63 +1,75 @@
 #!/bin/bash
 
+# written by: Mike Liddle <mike.liddle@connorgp.com>
+
 # NOTE: before running this on an account, verify you have added the SSH key to the account.  If not, it will not push.
 # NOTE: in addition to adding the user to the users.txt document, you must also create a folder in gitHub for the user.
 # NOTE: when you copy the files to the server, make sure they are in unix formattype "sed -i -e 's|\r||' your_script.sh"
 #		replacing 'your_script.sh' with the file names.
 
 # variables to use in the running of the service
-run_mono='/usr/local/bin/mono'
-run_git='/usr/bin/git'
-repo_path_location='/opt/copyright_service/gitHub'
-service_path_location='/opt/copyright_service'
-message='added copyright headers'
-copyrightServiceName='copyrightService.exe'
-exclusion='remotes/origin/'
+declare -r RUN_MONO='/usr/local/bin/mono'
+declare -r RUN_GIT='/usr/bin/git'
+declare -r REPO_PATH_LOCATION='/opt/copyright_service/gitHub'
+declare -r SERVICE_PATH_LOCATION='/opt/copyright_service'
 # end variables
 
-function checkoutRunPush {
+function checkout_run_push {
+
+	# variables for checkout_run_push
+	local -r message='added copyright headers'
+	local -r copyrightServiceName='copyrightService.exe'
+	local -r exclusion='remotes/origin/'
+	# end variables
+
 	branch=${branch#$exclusion}			
 	
 	cd $path/$repoName
-	$run_git checkout $branch | grep remotes/origin
+	$RUN_GIT checkout $branch | grep remotes/origin
 	
 	echo $branch
 
 	echo 'running copyrightService'
-	cd $service_path_location
-	$run_mono $service_path_location/$copyrightServiceName
+	cd $SERVICE_PATH_LOCATION
+	$RUN_MONO $SERVICE_PATH_LOCATION/$copyrightServiceName
 	echo 'service finished'
 
 	cd $path/$repoName
-	$run_git commit -a -m "$message"
-	$run_git push ssh://git@github.com/$user/$repoName
+	$RUN_GIT commit -a -m "$message"
+	$RUN_GIT push ssh://git@github.com/$user/$repoName
 	echo 'git pushed'
 }
 
-while read line
-do
-	user=$line
-	echo $user
+# $1 list of users
+# $2 list of repositories
+function main {
 	while read line
 	do
-		repoName=$line
+		local -r user=$line
+		local -r echo $user
+		while read line
+		do
+			local -r repoName=$line
+			
+			local -r path=$REPO_PATH_LOCATION/$user
+
+			cd $path
+			ls -al
+			rm -rf $repoName
 		
-		path=$repo_path_location/$user
+			echo "deleted $repoName"
+				
+			$RUN_GIT clone https://github.com/$user/$repoName
+			echo "initial git pulled of $repoName"
 
-		cd $path
-		ls -al
-		rm -rf $repoName
-		
-		echo "deleted $repoName"
+			cd $path/$repoName
+	
+			#here we switch between branches to update all code...We hope.
+			for branch in `git branch -a | grep remotes/origin`; do	
+				checkout_run_push		
+			done	
+		done < $2
+	done < $1
+}
 
-		$run_git clone https://github.com/$user/$repoName
-		echo "initial git pulled of $repoName"
-
-		cd $path/$repoName
-
-		#here we switch between branches to update all code...We hope.
-		for branch in `git branch -a | grep remotes/origin`; do	
-			checkoutRunPush			
-		done	
-	done < $2
-done < $1
+main $1 $2
