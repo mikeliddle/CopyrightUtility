@@ -1,3 +1,3 @@
 <?php
-	exec("mono /opt/copyright_service/copyrightService.exe");
+	exec("wine /opt/copyright_service/copyrightService.exe");
 ?>

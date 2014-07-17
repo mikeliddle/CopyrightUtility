@@ -1,5 +1,3 @@
-<html>
-	<H1>HI!</H1>
 <?php
 /** 
   * This script is for easily deploying updates to Github repos to your local server. It will automatically git clone or 
@@ -42,4 +40,3 @@ if ( $_POST['payload'] ) {
 }
 
 ?>
-</html>
