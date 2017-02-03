@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IcLvppVITfQ/KwP8CO3szQQLfvLrOCqvFiHoXFQDesk=</dsig:DigestValue>
+        <dsig:DigestValue>t2o9NFBntkDu3qOP2GQ3WPX8umqIu/TQk8GrjIyRMZ8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -65,22 +65,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="copyright.txt" size="911">
+  <file name="copyright.txt" size="562">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>oYzOqgPjA8ROQq9esfhuCEla4DIuOopBimR1tUn83bA=</dsig:DigestValue>
+      <dsig:DigestValue>LtOBgYJ1uHYfPUhIul8tfZ5yXV1P4fYPEoEo+vRaSa8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DebugCopyrightAdditionService.exe.config" size="2654">
+  <file name="DebugCopyrightAdditionService.exe.config" size="2737">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iV05IByBwkdlYiEMJEY1foUrYGDWI4YsVojIJvWeeXc=</dsig:DigestValue>
+      <dsig:DigestValue>hGiuk8j6vv2Hk2s3diEs+66s7yeWL++SA2LMKgkP2gg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Properties\log4net.dll" size="299520">

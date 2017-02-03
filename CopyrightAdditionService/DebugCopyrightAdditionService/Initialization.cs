@@ -156,8 +156,6 @@ namespace DebugCopyrightAdditionService
             }
         }
 
-
-        //download resharper, install trial
         /// <summary>
         ///     Writes the Log file so a user can see which files were updated and
         ///     which weren't.
