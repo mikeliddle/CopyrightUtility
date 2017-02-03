@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # written by: Mike Liddle <mike.liddle@connorgp.com>
-
+# 
+# This script manages the git commands associated with an automated process.
+# This script then calls the file copyrightService.exe and runs that. 
+#
 # NOTE: before running this on an account, verify you have added the SSH key to the account.  If not, it will not push.
 # NOTE: in addition to adding the user to the users.txt document, you must also create a folder in gitHub for the user.
 # NOTE: when you copy the files to the server, make sure they are in unix formattype "sed -i -e 's|\r||' your_script.sh"
