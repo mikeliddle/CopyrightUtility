@@ -5,7 +5,8 @@ import os
 import glob
 from Comment_Insertion import Comment_Insertion
 
-CONFIG_FILE = "/home/mliddle2/workspace/copyrightutility/CopyrightAdditionService/App.config"
+ROOT_DIR = "/home/mliddle2/workspace/copyrightutility/"
+CONFIG_FILE = ROOT_DIR + "App.config"
 
 file_types = list()
 directories = list()
@@ -32,6 +33,7 @@ def process_file(index_of_file, file_names):
         extension_index += 1
     else:
         file_path = files_to_process[index_of_file]
+        print(str(extension_index))
         insertion_obj = Comment_Insertion(
             license_text, file_types[extension_index], file_path)
 
@@ -62,8 +64,20 @@ def driver():
         extension_index = 0
 
 
-def main():
-    global copyright_file_path, file_types, directories, license_text
+def main(_directory):
+    global copyright_file_path, file_types, directories, license_text, files_to_process, file_names, extension_index, updated_files, no_need_files
+
+    file_types = list()
+    directories = list()
+    files_to_process = list()
+    file_names = list()
+    copyright_file_path = ""
+    extension_index = 0
+    license_text = list()
+    updated_files = list()
+    no_need_files = list()
+
+    directories.append(_directory)
 
     tree = ET.parse(CONFIG_FILE)
     root = tree.getroot()
@@ -73,9 +87,6 @@ def main():
             copyright_file_path = child.attrib['filepath']
             with open(copyright_file_path, 'r') as copyright_file:
                 license_text = copyright_file.readlines()
-        elif child.tag == "directorylist":
-            for directory in child:
-                directories.append(directory.attrib['path'])
         elif child.tag == "filetypes":
             for extension in child:
                 obj = extension.attrib
@@ -83,6 +94,3 @@ def main():
                     File_Type(obj['file'], obj['comment'], obj['endComment']))
 
     driver()
-
-
-main()

@@ -1,0 +1,13 @@
+mikeliddle,github.com,mikeliddle.github.io,f
+mikeliddle,github.com,copyrightutility,f
+mikeliddle,github.com,Memo,f
+mikeliddle,bitbucket.org,cs240,f
+mikeliddle,bitbucket.org,cs340,f
+mikeliddle,bitbucket.org,cs324,f
+mikeliddle,bitbucket.org,cs312,f
+mikeliddle,bitbucket.org,cs236,f
+mikeliddle,bitbucket.org,cs235,f
+mikeliddle,bitbucket.org,apcs,f
+mikeliddle,bitbucket.org,csrprojects,f
+mikeliddle,bitbucket.org,messageboard,f
+mikeliddle,github.com,mikeliddle.com,f
