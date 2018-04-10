@@ -3,12 +3,19 @@
 import xml.etree.ElementTree as ET
 import os
 import glob
+from Comment_Insertion import Comment_Insertion
 
-CONFIG_FILE = "/home/mliddle2/workspace/copyrightutility/CopyrightAdditionService/CopyrightService/App.config"
+CONFIG_FILE = "/home/mliddle2/workspace/copyrightutility/CopyrightAdditionService/App.config"
 
-_file_types = list()
-_directories = list()
-_copyrightFilePath = ""
+file_types = list()
+directories = list()
+files_to_process = list()
+file_names = list()
+copyright_file_path = ""
+extension_index = 0
+license_text = list()
+updated_files = list()
+no_need_files = list()
 
 
 class File_Type(object):
@@ -18,43 +25,61 @@ class File_Type(object):
         self.endComment = endComment
 
 
-def get_files_and_make_changes(directory):
-    os.chdir(directory)
-    files_to_process = list()
-    file_names = list()
+def process_file(index_of_file, file_names):
+    global extension_index
 
-    for file_type in _file_types:
-        files_to_process += glob.glob(file_type.extension)
+    if files_to_process[index_of_file] is "next":
+        extension_index += 1
+    else:
+        file_path = files_to_process[index_of_file]
+        insertion_obj = Comment_Insertion(
+            license_text, file_types[extension_index], file_path)
+
+        if insertion_obj.process_file():
+            updated_files.append(file_path)
+        else:
+            no_need_files.append(file_path)
+
+
+def get_files_and_make_changes(directory):
+    global files_to_process, file_names
+
+    os.chdir(directory)
+
+    for file_type in file_types:
+        files_to_process += glob.iglob(str("**/" + file_type.extension), recursive=True)
         files_to_process.append("next")
 
-    for file_obj in files_to_process:
-        file_names.append(file_obj)
-
-    print(file_names)
-
-    pass
+    for i in range(0, len(files_to_process)):
+        process_file(i, files_to_process[i])
 
 
 def driver():
-    for directory in _directories:
+    global extension_index
+
+    for directory in directories:
         get_files_and_make_changes(directory)
-        _extensionIndex = 0
+        extension_index = 0
 
 
 def main():
+    global copyright_file_path, file_types, directories, license_text
+
     tree = ET.parse(CONFIG_FILE)
     root = tree.getroot()
 
     for child in root:
         if child.tag == "copyrightfile":
-            _copyrightFilePath = child.attrib['filepath']
+            copyright_file_path = child.attrib['filepath']
+            with open(copyright_file_path, 'r') as copyright_file:
+                license_text = copyright_file.readlines()
         elif child.tag == "directorylist":
             for directory in child:
-                _directories.append(directory.attrib['path'])
+                directories.append(directory.attrib['path'])
         elif child.tag == "filetypes":
             for extension in child:
                 obj = extension.attrib
-                _file_types.append(
+                file_types.append(
                     File_Type(obj['file'], obj['comment'], obj['endComment']))
 
     driver()

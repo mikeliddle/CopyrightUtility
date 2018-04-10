@@ -1,4 +1,4 @@
-﻿  Author:    Michael A Liddle                                
+  Author:    Michael A Liddle                                
   Email:     mike@mikeliddle.com                             
   Website:   http://www.mikeliddle.com                       
                                                              

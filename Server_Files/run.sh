@@ -13,7 +13,7 @@
 # variables to use in the running of the service
 declare -r RUN_GIT='/usr/bin/git'
 declare -r REPO_PATH_LOCATION='/opt/copyright_service/gitHub'
-declare -r SERVICE_PATH_LOCATION='CopyrightAdditionService/main.py'
+declare -r SERVICE_PATH_LOCATION='CopyrightAdditionService'
 # end variables
 
 # $1 user
@@ -22,8 +22,8 @@ declare -r SERVICE_PATH_LOCATION='CopyrightAdditionService/main.py'
 function checkout_run_push {
 
 	# variables for checkout_run_push
-	local -r message='added copyright headers'
-	local -r copyrightServiceName='copyrightService.exe'
+	local -r message='added/updated copyright headers'
+	local -r copyrightServiceName='main.py'
 	local -r exclusion='remotes/origin/'
 	# end variables
 
