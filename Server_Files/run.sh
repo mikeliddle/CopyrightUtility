@@ -12,7 +12,7 @@
 
 # variables to use in the running of the service
 declare -r RUN_GIT='/usr/bin/git'
-declare -r REPO_PATH_LOCATION='/opt/gitHub'
+declare -r REPO_PATH_LOCATION='/opt/git_hub'
 declare -r SERVICE_PATH_LOCATION='CopyrightAdditionService'
 # end variables
 
