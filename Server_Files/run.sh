@@ -11,10 +11,9 @@
 #		replacing 'your_script.sh' with the file names.
 
 # variables to use in the running of the service
-declare -r RUN_MONO='/usr/local/bin/mono'
 declare -r RUN_GIT='/usr/bin/git'
 declare -r REPO_PATH_LOCATION='/opt/copyright_service/gitHub'
-declare -r SERVICE_PATH_LOCATION='/opt/copyright_service'
+declare -r SERVICE_PATH_LOCATION='CopyrightAdditionService/main.py'
 # end variables
 
 # $1 user
@@ -37,12 +36,12 @@ function checkout_run_push {
 
 	echo 'running copyrightService'
 	cd $SERVICE_PATH_LOCATION
-	$RUN_MONO $SERVICE_PATH_LOCATION/$copyrightServiceName
+	$SERVICE_PATH_LOCATION/$copyrightServiceName
 	echo 'service finished'
 
 	cd $3/$1
 	$RUN_GIT commit -a -m "$message"
-	$RUN_GIT push ssh://git@github.com/$2/$1
+	$RUN_GIT push git@github.com:$2/$1
 	echo 'git pushed'
 }
 
@@ -58,7 +57,7 @@ function delete_and_clone {
 	rm -rf $repo_name
 	echo "deleted $repo_name"
 				
-	$RUN_GIT clone https://github.com/$2/$repo_name
+	$RUN_GIT clone git@github.com:$2/$repo_name
 	echo "initial git pulled of $repo_name"
 
 	cd $path/$repo_name
