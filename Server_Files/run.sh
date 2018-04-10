@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# written by: Mike Liddle <mike.liddle@connorgp.com>
+# written by: Mike Liddle <mike@mikeliddle.com>
 # 
 # This script manages the git commands associated with an automated process.
 # This script then calls the file copyrightService.exe and runs that. 
