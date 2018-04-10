@@ -12,7 +12,7 @@
 
 # variables to use in the running of the service
 declare -r RUN_GIT='/usr/bin/git'
-declare -r REPO_PATH_LOCATION='/opt/copyright_service/gitHub'
+declare -r REPO_PATH_LOCATION='/opt/gitHub'
 declare -r SERVICE_PATH_LOCATION='CopyrightAdditionService'
 # end variables
 
@@ -31,7 +31,7 @@ function checkout_run_push {
 	
 	mkdir $3/$1
 	cd $3/$1
-	$RUN_GIT checkout $branch | grep remotes/origin
+	$RUN_GIT checkout $branch | grep $exclusion
 	
 	echo $branch
 
