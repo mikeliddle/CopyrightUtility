@@ -29,6 +29,7 @@ function checkout_run_push {
 
 	branch=${branch#$exclusion}			
 	
+	mkdir $3/$1
 	cd $3/$1
 	$RUN_GIT checkout $branch | grep remotes/origin
 	
@@ -52,6 +53,7 @@ function delete_and_clone {
 	local -r repo_name=$1	
 	local -r path=$REPO_PATH_LOCATION/$2
 
+	mkdir $path
 	cd $path
 	ls -al
 	rm -rf $repo_name
@@ -60,6 +62,7 @@ function delete_and_clone {
 	$RUN_GIT clone git@github.com:$2/$repo_name
 	echo "initial git pulled of $repo_name"
 
+	mkdir $path/$repo_name
 	cd $path/$repo_name
 	
 	#here we switch between branches to update all code...We hope.
