@@ -29,8 +29,8 @@ function checkout_run_push {
 
 	branch=${branch#$exclusion}			
 	
-	mkdir $3/$1
-	cd $3/$1
+	mkdir $3/$2
+	cd $3/$2
 	$RUN_GIT checkout $branch | grep $exclusion
 	
 	echo $branch
@@ -42,7 +42,7 @@ function checkout_run_push {
 
 	cd $3/$1
 	$RUN_GIT commit -a -m "$message"
-	$RUN_GIT push git@github.com:$2/$1
+	$RUN_GIT push git@github.com:$1/$2
 	echo 'git pushed'
 }
 
