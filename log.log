@@ -1,0 +1,133 @@
+DEBUG:root:fetching repository mikeliddle,github.com,mikeliddle.github.io,f
+DEBUG:root:fetching repository mikeliddle,github.com,copyrightutility,f
+DEBUG:root:fetching repository mikeliddle,github.com,Memo,f
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/mikeliddle.github.io', '/opt/github/mikeliddle/mikeliddle.github.io'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/Memo', '/opt/github/mikeliddle/Memo'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/copyrightutility', '/opt/github/mikeliddle/copyrightutility'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/Memo', '/opt/github/mikeliddle/Memo'])'s unused stdout: 
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/copyrightutility', '/opt/github/mikeliddle/copyrightutility'])'s unused stdout: 
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,cs240,f
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/Memo, universal_newlines=False, shell=None)
+DEBUG:git.cmd:Popen(['git', 'checkout', 'master'], cwd=/opt/github/mikeliddle/Memo, universal_newlines=False, shell=None)
+DEBUG:root:started copyright utility
+DEBUG:root:copyright file: /home/mliddle2/workspace/copyrightutility/copyright.txt
+DEBUG:root:retreived file extension information.
+DEBUG:root:getting all files to process from directory: /opt/github/mikeliddle/Memo
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/mikeliddle.github.io', '/opt/github/mikeliddle/mikeliddle.github.io'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/mikeliddle.github.io, universal_newlines=False, shell=None)
+DEBUG:git.cmd:Popen(['git', 'checkout', 'master'], cwd=/opt/github/mikeliddle/mikeliddle.github.io, universal_newlines=False, shell=None)
+DEBUG:root:started copyright utility
+DEBUG:root:copyright file: /home/mliddle2/workspace/copyrightutility/copyright.txt
+DEBUG:root:retreived file extension information.
+DEBUG:root:getting all files to process from directory: /opt/github/mikeliddle/mikeliddle.github.io
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/copyrightutility, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,cs340,f
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs240', '/opt/github/mikeliddle/cs240'], cwd=/opt/github/mikeliddle/mikeliddle.github.io, universal_newlines=True, shell=None)
+DEBUG:git.cmd:Popen(['git', 'checkout', 'master'], cwd=/opt/github/mikeliddle/copyrightutility, universal_newlines=False, shell=None)
+DEBUG:root:started copyright utility
+DEBUG:root:copyright file: /home/mliddle2/workspace/copyrightutility/copyright.txt
+DEBUG:root:retreived file extension information.
+DEBUG:root:getting all files to process from directory: /opt/github/mikeliddle/copyrightutility
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+INFO:root:processing file js/mainApp.js
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:root:moving to next file type
+DEBUG:git.cmd:Popen(['git', 'commit', '-a', '--author=copyright_service<mike@mikeliddle.com>', '--message=added/updated copyright headers'], cwd=/opt/github/mikeliddle/copyrightutility, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,github.com,mikeliddle.github.io,s
+DEBUG:root:fetching repository mikeliddle,github.com,copyrightutility,s
+DEBUG:root:cloning repo: mikeliddle,github.com,mikeliddle.github.io,s
+DEBUG:root:fetching repository mikeliddle,github.com,Memo,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/mikeliddle.github.io', '/opt/github/mikeliddle/mikeliddle.github.io'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,cs240,s
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,cs240,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs240', '/opt/github/mikeliddle/cs240'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:root:cloning repo: mikeliddle,github.com,Memo,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/Memo', '/opt/github/mikeliddle/Memo'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:root:cloning repo: mikeliddle,github.com,copyrightutility,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/copyrightutility', '/opt/github/mikeliddle/copyrightutility'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/Memo', '/opt/github/mikeliddle/Memo'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/Memo, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,cs340,s
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,cs340,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs340', '/opt/github/mikeliddle/cs340'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/mikeliddle.github.io', '/opt/github/mikeliddle/mikeliddle.github.io'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/mikeliddle.github.io, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,cs324,s
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/copyrightutility', '/opt/github/mikeliddle/copyrightutility'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/copyrightutility, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,cs312,s
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,cs312,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs312', '/opt/github/mikeliddle/cs312'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,cs324,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs324', '/opt/github/mikeliddle/cs324'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs340', '/opt/github/mikeliddle/cs340'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/cs340, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,cs236,s
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,cs236,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs236', '/opt/github/mikeliddle/cs236'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs312', '/opt/github/mikeliddle/cs312'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/cs312, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,cs235,s
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,cs235,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs235', '/opt/github/mikeliddle/cs235'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs236', '/opt/github/mikeliddle/cs236'])'s unused stdout: 
+DEBUG:git.cmd:AutoInterrupt wait stderr: b"Cloning into '/opt/github/mikeliddle/cs236'...\nConnection to bitbucket.org closed by remote host.\nfatal: The remote end hung up unexpectedly\nfatal: early EOF\nfatal: index-pack failed\n"
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,apcs,s
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,apcs,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/apcs', '/opt/github/mikeliddle/apcs'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/apcs', '/opt/github/mikeliddle/apcs'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/apcs, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,csrprojects,s
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,csrprojects,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/csrprojects', '/opt/github/mikeliddle/csrprojects'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/csrprojects', '/opt/github/mikeliddle/csrprojects'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/csrprojects, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,bitbucket.org,messageboard,s
+DEBUG:root:cloning repo: mikeliddle,bitbucket.org,messageboard,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/messageboard', '/opt/github/mikeliddle/messageboard'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/messageboard', '/opt/github/mikeliddle/messageboard'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/messageboard, universal_newlines=False, shell=None)
+DEBUG:root:fetching repository mikeliddle,github.com,mikeliddle.com,s
+DEBUG:root:cloning repo: mikeliddle,github.com,mikeliddle.com,s
+DEBUG:git.cmd:Popen(['git', 'clone', '--branch=master', '-v', 'git@github.com:mikeliddle/mikeliddle.com', '/opt/github/mikeliddle/mikeliddle.com'], cwd=/opt/github, universal_newlines=True, shell=None)
+DEBUG:git.repo.base:Cmd(['git', 'clone', '--branch=master', '-v', 'git@bitbucket.org:mikeliddle/cs235', '/opt/github/mikeliddle/cs235'])'s unused stdout: 
+DEBUG:git.cmd:Popen(['git', 'init'], cwd=/opt/github/mikeliddle/cs235, universal_newlines=False, shell=None)
