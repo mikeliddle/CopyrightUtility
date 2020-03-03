@@ -1,1 +1,10 @@
 *.suo
+.vs
+*.userprefs
+*.swp
+*\~
+
+obj
+bin
+Debug
+*.cache
